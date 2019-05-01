@@ -1,17 +1,17 @@
 <template lang="html">
   <div>
     <h1>Countries</h1>
-    <div class="list">
-      <countries-list :countries='countries'></countries-list>
+      <countries-select :countries='countries'></countries-select>
+      <!-- <countries-list :countries='countries'></countries-list> -->
       <country-detail :country='selectedCountry'></country-detail>
-    </div>
 
   </div>
 </template>
 
 <script>
-import CountryList from './components/CountriesList.vue';
+// import CountryList from './components/CountriesList.vue';
 import CountryDetail from './components/CountryDetail.vue';
+import CountrySelect from './components/CountrySelect.vue';
 import {eventBus} from './main.js';
 export default {
   name: 'app',
@@ -31,15 +31,13 @@ export default {
     })
   },
   components: {
-    "countries-list": CountryList,
-    "country-detail": CountryDetail
+    // "countries-list": CountryList,
+    "country-detail": CountryDetail,
+    "countries-select": CountrySelect
   }
 }
 </script>
 
 <style lang="css" scoped>
-.list {
-  display: flex;
-  justify-content: space-between;
-}
+
 </style>
